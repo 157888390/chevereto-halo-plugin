@@ -1,0 +1,30 @@
+apiVersion: storage.halo.run/v1alpha1
+kind: PolicyTemplate
+metadata:
+  name: chevereto
+spec:
+  displayName: Chevereto 图床
+  settingName: chevereto-policy-setting
+---
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: chevereto-policy-setting
+spec:
+  forms:
+    - group: default
+      formSchema:
+        - $formkit: text
+          name: apiUrl
+          label: API 地址
+          help: Chevereto 图床的部署地址，例如 https://img.example.com（务必使用 HTTPS）
+          validation: required
+        - $formkit: password
+          name: apiKey
+          label: API Key
+          help: Chevereto 后台生成的 API V1 Key（个人 API Key 或 Guest API Key）
+          validation: required
+        - $formkit: text
+          name: albumId
+          label: 相册 ID（可选）
+          help: 上传到指定相册的编码 ID（相册 URL 中可见，如 /album/tu.vJ 中的 vJ），留空则不指定相册
