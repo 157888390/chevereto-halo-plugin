@@ -263,7 +263,10 @@ public class CheveretoAttachmentHandler implements AttachmentHandler {
 
         a.setMetadata(metadata);
         var spec = new Attachment.AttachmentSpec();
-        spec.setDisplayName(r.getName() != null ? r.getName() : filename);
+        // 始终用 Halo 侧的原始文件名作为显示名。
+        // Chevereto 响应里的 image.filename 是「存储之后」的名字，若后台把命名策略
+        // 设为「随机」或「ID」，它会变成 8 位随机串或纯数字，不适合作为附件名展示。
+        spec.setDisplayName(filename);
         spec.setMediaType(r.getMimeType() != null ? r.getMimeType() : "application/octet-stream");
         spec.setSize(r.getSize() != null ? r.getSize() : size);
         a.setSpec(spec);
