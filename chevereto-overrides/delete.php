@@ -15,7 +15,6 @@ use Chevereto\Legacy\Classes\ApiKey;
 use Chevereto\Legacy\Classes\Image;
 use Chevereto\Legacy\Classes\User;
 use Chevereto\Legacy\G\Handler;
-use Throwable;
 use function Chevereto\Legacy\decodeID;
 use function Chevereto\Legacy\G\json_document_output;
 use function Chevereto\Vars\request;
