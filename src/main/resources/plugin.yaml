@@ -14,7 +14,7 @@ spec:
   repo: https://github.com/157888390/chevereto-halo-plugin
   issues: https://github.com/157888390/chevereto-halo-plugin/issues
   displayName: "Chevereto 图床"
-  description: "集成 Chevereto 作为 Halo 附件存储后端，将上传的图片存储到自部署的 Chevereto 图床"
+  description: "将自部署的 Chevereto 图床作为 Halo 附件存储后端：上传即返回外链直出，支持指定相册，删除附件时同步删除远端原图"
   license:
     - name: "GPL-3.0"
       url: "https://github.com/157888390/chevereto-halo-plugin/blob/main/LICENSE"
